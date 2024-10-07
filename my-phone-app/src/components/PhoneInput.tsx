@@ -32,20 +32,19 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ onCollectPhoneNumber }) => {
   return (
     <div className="container my-5 p-4 bg-light rounded shadow-sm">
       <div className="mb-3">
-        <input
+        <input style={{fontSize: 60}}
           type="tel"
           className="form-control"
           value={phoneNumber}
-          readOnly
           placeholder="Enter Phone Number"
           maxLength={10}
         />
       </div>
-      <div className="row g-2 mb-3">
+      <div className="row mb-3">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-          <div key={num} className="col-4">
+          <div key={num} className="col-4 mb-3 g-3">
             <button
-              className="btn btn-primary w-100"
+              className="btn btn-primary w-100 p-5"
               onClick={() => appendNumber(String(num))}
             >
               {num}
@@ -53,26 +52,26 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ onCollectPhoneNumber }) => {
           </div>
         ))}
         <div className="col-4">
-          <button className="btn btn-danger w-100" onClick={clearAll}>
+          <button className="btn btn-danger w-100 p-5" onClick={clearAll}>
             Clear
           </button>
         </div>
         <div className="col-4">
           <button
-            className="btn btn-primary w-100"
+            className="btn btn-primary w-100 p-5"
             onClick={() => appendNumber('0')}
           >
             0
           </button>
         </div>
         <div className="col-4">
-          <button className="btn btn-warning w-100" onClick={deleteLast}>
+          <button className="btn btn-warning w-100 p-5" onClick={deleteLast}>
             Delete
           </button>
         </div>
       </div>
       <button
-        className="btn btn-success w-100"
+        className="btn btn-success w-100 p-5"
         onClick={handleCollectPhoneNumber}
         disabled={phoneNumber.length !== 10}
       >

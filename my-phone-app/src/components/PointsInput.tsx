@@ -36,15 +36,15 @@ const PointsInput: React.FC<PointsInputProps> = ({ onSubmitPoints, totalPoints, 
       {!showSummary ? (
         <>
           <div className="mb-3">
-            <h4>Phone Number: {phoneNumber}</h4>
-            <h5>Total Points: {totalPoints}</h5>
-            <h6>Points Entered: {points}</h6>
+            <h4 style={{fontSize: 30}}>Phone Number: {phoneNumber}</h4>
+            <h5 style={{fontSize: 30}}>Total Points: {totalPoints}</h5>
+            <h6 style={{fontSize: 30}}>Points Entered: {points}</h6>
           </div>
           <div className="row g-2 mb-3">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-              <div key={num} className="col-4">
+              <div key={num} className="col-4 mb-3 g-3">
                 <button
-                  className="btn btn-primary w-100 "
+                  className="btn btn-primary w-100 p-5"
                   onClick={() => appendPoints(String(num))}
                 >
                   {num}
@@ -52,17 +52,17 @@ const PointsInput: React.FC<PointsInputProps> = ({ onSubmitPoints, totalPoints, 
               </div>
             ))}
             <div className="col-4">
-              <button className="btn btn-danger w-100" onClick={clearPoints}>
+              <button className="btn btn-danger w-100 p-5" onClick={clearPoints}>
                 Clear Points
               </button>
             </div>
             <div className="col-4">
-              <button className="btn btn-secondary w-100" onClick={() => appendPoints('0')}>
+              <button className="btn btn-secondary w-100 p-5" onClick={() => appendPoints('0')}>
                 0
               </button>
             </div>
             <div className="col-4">
-              <button className="btn btn-success w-100" onClick={handleSubmitPoints}>
+              <button className="btn btn-success w-100 p-5" onClick={handleSubmitPoints}>
                 Submit Points
               </button>
             </div>

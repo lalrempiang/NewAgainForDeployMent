@@ -33,8 +33,8 @@ const PointsSummary: React.FC<PointsSummaryProps> = ({ totalPoints, phoneNumber,
         <i className="bi bi-arrow-left" style={{ fontSize: '1.5rem' }}></i>
       </button>
 
-      <h4 className="mt-4">Phone Number: {phoneNumber}</h4>
-      <h5>Total Points: {totalPoints}</h5>
+      <h4 className="mt-4" style={{fontSize: 30}}>Phone Number: {phoneNumber}</h4>
+      <h5 style={{fontSize: 30}}>Total Points: {totalPoints}</h5>
 
       {!showRedeemOptions && !redeemed && (
         <>
